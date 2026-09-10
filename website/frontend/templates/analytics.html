@@ -1,0 +1,244 @@
+{% extends "base.html" %}
+
+{% block title %}
+Analytics | PythonJobs
+{% endblock %}
+
+{% block content %}
+
+<main class="analytics-container">
+
+    <section class="analytics-header">
+
+        <span class="section-label">
+            DATA ANALYTICS
+        </span>
+
+        <h1>
+            Python Job Market
+            <span>Insights</span>
+        </h1>
+
+        <p>
+            Explore statistics and patterns discovered
+            from the collected job listings.
+        </p>
+
+    </section>
+
+
+    <!-- Statistics -->
+
+    <section class="container">
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <span class="stat-label">
+                    Total Jobs
+                </span>
+
+                <strong>
+                    {{ total_jobs }}
+                </strong>
+            </div>
+
+
+            <div class="stat-card">
+                <span class="stat-label">
+                    Companies
+                </span>
+
+                <strong>
+                    {{ total_companies }}
+                </strong>
+            </div>
+
+
+            <div class="stat-card">
+                <span class="stat-label">
+                    Locations
+                </span>
+
+                <strong>
+                    {{ total_locations }}
+                </strong>
+            </div>
+
+
+            <div class="stat-card">
+                <span class="stat-label">
+                    Python Jobs
+                </span>
+
+                <strong>
+                    {{ python_count }}
+                </strong>
+
+                <small>
+                    {{ python_percentage }}%
+                </small>
+            </div>
+
+        </div>
+
+
+        <!-- Python vs Non-Python -->
+
+        <section class="analytics-card">
+
+            <div class="analytics-card-header">
+
+                <div>
+                    <span class="section-label">
+                        JOB DISTRIBUTION
+                    </span>
+
+                    <h2>
+                        Python vs Other Jobs
+                    </h2>
+                </div>
+
+            </div>
+
+            <div class="distribution-grid">
+
+                <div class="distribution-item">
+
+                    <span>
+                        Python Jobs
+                    </span>
+
+                    <strong>
+                        {{ python_count }}
+                    </strong>
+
+                </div>
+
+
+                <div class="distribution-item">
+
+                    <span>
+                        Other Jobs
+                    </span>
+
+                    <strong>
+                        {{ non_python_count }}
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Companies -->
+
+        <section class="analytics-card">
+
+            <span class="section-label">
+                TOP COMPANIES
+            </span>
+
+            <h2>
+                Companies with Most Listings
+            </h2>
+
+            <div class="analytics-list">
+
+                {% for company, count in company_data.items() %}
+
+                <div class="analytics-row">
+
+                    <span>
+                        {{ company }}
+                    </span>
+
+                    <strong>
+                        {{ count }}
+                    </strong>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+
+        <!-- Locations -->
+
+        <section class="analytics-card">
+
+            <span class="section-label">
+                TOP LOCATIONS
+            </span>
+
+            <h2>
+                Job Locations
+            </h2>
+
+            <div class="analytics-list">
+
+                {% for location, count in location_data.items() %}
+
+                <div class="analytics-row">
+
+                    <span>
+                        {{ location }}
+                    </span>
+
+                    <strong>
+                        {{ count }}
+                    </strong>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+
+        <!-- Posted Dates -->
+
+        <section class="analytics-card">
+
+            <span class="section-label">
+                POSTING ACTIVITY
+            </span>
+
+            <h2>
+                Jobs by Posted Date
+            </h2>
+
+            <div class="analytics-list">
+
+                {% for date, count in date_data.items() %}
+
+                <div class="analytics-row">
+
+                    <span>
+                        {{ date }}
+                    </span>
+
+                    <strong>
+                        {{ count }}
+                    </strong>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+    </section>
+
+</main>
+
+{% endblock %}

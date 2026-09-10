@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ job["title"] }} | PythonJobs
+{% endblock %}
+
+{% block content %}
+
+<main class="job-detail-container">
+
+    <!-- Back -->
+    <a href="{{ url_for('main.home') }}" class="back-link">
+        ← Back to Jobs
+    </a>
+
+
+    <!-- Job Header -->
+    <section class="job-detail-header">
+
+        <div class="detail-company-avatar">
+            {{ job["company"][0]|upper }}
+        </div>
+
+        <div class="detail-header-content">
+
+            <span class="section-label">
+                JOB OPPORTUNITY
+            </span>
+
+            <h1>
+                {{ job["title"] }}
+            </h1>
+
+            <p class="detail-company">
+                {{ job["company"] }}
+            </p>
+
+            <div class="detail-meta">
+
+                <span>
+                    📍 {{ job["location"] }}
+                </span>
+
+                <span>
+                    📅 {{ job["posted_date"] }}
+                </span>
+
+                <span>
+                    💼 Full-time
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Main Content -->
+    <div class="job-detail-grid">
+
+
+        <!-- Description -->
+        <section class="job-description-card">
+
+            <div class="card-heading">
+
+                <span class="section-label">
+                    JOB DETAILS
+                </span>
+
+                <h2>
+                    Job Description
+                </h2>
+
+            </div>
+
+            <div class="description-text">
+                {{ job["description"] }}
+            </div>
+
+        </section>
+
+
+        <!-- Sidebar -->
+        <aside class="job-sidebar">
+
+
+            <!-- Apply -->
+            <div class="apply-card">
+
+                <h3>
+                    Interested in this job?
+                </h3>
+
+                <p>
+                    View the original listing
+                    and apply on the job website.
+                </p>
+
+                <a
+                    href="{{ job['link'] }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="apply-button"
+                >
+                    Apply for this job
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+
+            <!-- Job Information -->
+            <div class="info-card">
+
+                <h3>
+                    Job Information
+                </h3>
+
+
+                <div class="info-item">
+
+                    <span class="info-label">
+                        Company
+                    </span>
+
+                    <strong>
+                        {{ job["company"] }}
+                    </strong>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-label">
+                        Location
+                    </span>
+
+                    <strong>
+                        {{ job["location"] }}
+                    </strong>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-label">
+                        Posted
+                    </span>
+
+                    <strong>
+                        {{ job["posted_date"] }}
+                    </strong>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-label">
+                        Job Type
+                    </span>
+
+                    <strong>
+                        Full-time
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Skills -->
+            {% if skills %}
+
+            <div class="info-card">
+
+                <h3>
+                    Skills Mentioned
+                </h3>
+
+                <div class="skill-list">
+
+                    {% for skill in skills %}
+
+                    <span class="skill-tag">
+                        {{ skill }}
+                    </span>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+            {% endif %}
+
+        </aside>
+
+    </div>
+
+</main>
+
+{% endblock %}

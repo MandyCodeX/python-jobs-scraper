@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+PythonJobs | Job Dashboard
+{% endblock %}
+
+
+{% block content %}
+
+<main>
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="section-label">
+                PYTHON JOB MARKET
+            </span>
+
+            <h1>
+                Find Your Next
+                <span>Python Opportunity</span>
+            </h1>
+
+            <p>
+                Explore Python job listings collected,
+                analyzed, and presented through this
+                interactive dashboard.
+            </p>
+
+
+            {% include "components/search_bar.html" %}
+
+
+            <p class="search-hint">
+                Search by job title, company, or location.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="container">
+
+        {% include "components/stats_cards.html" %}
+
+
+        <div class="jobs-toolbar">
+
+            <div>
+
+                <h2>
+                    Job Opportunities
+                </h2>
+
+                <p>
+                    {{ total_jobs }} jobs found
+                </p>
+
+            </div>
+
+
+            {% include "components/filters.html" %}
+
+        </div>
+
+
+        {% if jobs %}
+
+        <div class="jobs-grid">
+
+            {% for job in jobs %}
+
+                {% include "components/job_card.html" %}
+
+            {% endfor %}
+
+        </div>
+
+
+        {% else %}
+
+        <div class="no-results">
+
+            <h2>
+                No jobs found
+            </h2>
+
+            <p>
+                Try changing your search or filters.
+            </p>
+
+            <a href="/">
+                Clear Filters
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </section>
+
+</main>
+
+{% endblock %}

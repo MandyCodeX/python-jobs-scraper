@@ -1,0 +1,56 @@
+<form
+    action="/"
+    method="GET"
+    class="filters-form"
+>
+
+    <input
+        type="hidden"
+        name="search"
+        value="{{ search }}"
+    >
+
+
+    <label class="checkbox-filter">
+
+        <input
+            type="checkbox"
+            name="python_only"
+            value="on"
+            {% if python_only == "on" %}checked{% endif %}
+        >
+
+        Python Jobs Only
+
+    </label>
+
+
+    <select
+        name="sort"
+        onchange="this.form.submit()"
+    >
+
+        <option
+            value="title"
+            {% if sort == "title" %}selected{% endif %}
+        >
+            Sort by Title
+        </option>
+
+        <option
+            value="company"
+            {% if sort == "company" %}selected{% endif %}
+        >
+            Sort by Company
+        </option>
+
+        <option
+            value="date"
+            {% if sort == "date" %}selected{% endif %}
+        >
+            Sort by Date
+        </option>
+
+    </select>
+
+</form>

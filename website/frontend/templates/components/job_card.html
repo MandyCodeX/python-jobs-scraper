@@ -1,0 +1,59 @@
+<article class="job-card">
+
+    <div class="job-card-header">
+
+        <div class="company-avatar">
+
+            {{ job["company"][0]|upper }}
+
+        </div>
+
+        <div>
+
+            <h3>
+                {{ job["title"] }}
+            </h3>
+
+            <p class="company-name">
+                {{ job["company"] }}
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="job-meta">
+
+        <span>
+            📍 {{ job["location"] }}
+        </span>
+
+        <span>
+            📅 {{ job["posted_date"] }}
+        </span>
+
+    </div>
+
+
+    <p class="job-description">
+
+        {{ job["description"][:180] }}...
+
+    </p>
+
+
+    <a
+        href="{{ url_for('main.job_detail', job_id=job['job_id']) }}"
+        class="view-job"
+    >
+
+        View Details
+
+        <span>
+            →
+        </span>
+
+    </a>
+
+</article>
