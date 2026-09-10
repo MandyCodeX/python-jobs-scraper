@@ -1,134 +1,139 @@
-# Fake Python Jobs Scraper & Analytics Dashboard
+# Python Job Scraper
 
-A Python web scraping project that collects job listings from the Real Python Fake Jobs website, analyzes the data using Pandas, and presents the results through an interactive Flask web dashboard.
+A Python web scraping, data analysis, and Flask dashboard project that collects job listings from the Fake Python Jobs website and transforms them into a searchable job analytics platform.
 
----
-
-## 📌 Project Overview
+## 🚀 Project Overview
 
 This project demonstrates a complete data pipeline:
 
-**Web Scraping → Data Storage → Data Validation → Data Analysis → Visualization → Web Dashboard**
+**Web Scraping → Data Cleaning → Validation → Analysis → Visualization → Flask Web Application**
 
-The scraper collects job information from the Fake Python Jobs website and stores the results in a CSV file.
+The scraper collects job information from the Fake Python Jobs website, stores the results in CSV format, validates and analyzes the dataset using Pandas, and presents the results through an interactive Flask dashboard.
 
-The collected data is then validated and analyzed using Pandas and visualized through charts.
-
-Finally, a Flask web application provides an interactive interface for searching, filtering, viewing job details, and exploring analytics.
-
----
-
-## 🚀 Features
+## ✨ Features
 
 ### Web Scraping
 
-- Scrapes job listings using Requests and BeautifulSoup
+- Scrapes job listings using `Requests`
+- Parses HTML using `BeautifulSoup`
 - Extracts:
   - Job title
   - Company
   - Location
   - Job description
   - Posted date
-  - Job link
-- Handles request failures with retry logic
-- Stores scraped data in CSV format
+  - Job URL
+- Handles request failures and retries
 
 ### Data Validation & Analysis
 
-- Checks dataset size
+- Loads scraped data using Pandas
 - Checks missing values
 - Detects duplicate records
-- Analyzes job titles
-- Analyzes companies
-- Analyzes locations
-- Identifies Python-related jobs
-- Analyzes technology mentions
-- Analyzes posted dates
+- Analyzes Python-related jobs
+- Analyzes companies and locations
+- Examines job posting dates
+- Detects technology mentions
 
 ### Data Visualization
 
-The project generates visualizations for:
+The analysis generates visualizations for:
 
-- Top 10 job titles
-- Python vs. non-Python jobs
-- Top 10 job locations
-- Jobs by posted date
-- Top 10 companies
+- Job title distribution
+- Top companies
+- Job locations
+- Python vs non-Python jobs
+- Job posting activity
 
 ### Flask Dashboard
 
-The web application provides:
+The project includes a web dashboard with:
 
-- Job listing dashboard
-- Search functionality
-- Python-only filter
+- Search by job title, company, or location
+- Python Jobs Only filter
 - Job sorting
-- Individual job detail pages
-- Skills mentioned in job descriptions
-- Original job listing links
+- Job detail pages
+- Skills mentioned in descriptions
+- External application links
 - Analytics dashboard
 - Responsive design
 
----
-
-## 🛠️ Technologies Used
+## 🛠️ Technologies
 
 | Technology | Purpose |
 |------------|---------|
 | Python | Core programming language |
 | Requests | HTTP requests |
-| BeautifulSoup | Web scraping |
-| CSV | Data storage |
+| BeautifulSoup | HTML parsing |
 | Pandas | Data analysis |
 | Matplotlib | Data visualization |
 | Flask | Web application |
-| HTML | Web page structure |
-| CSS | Web page styling |
+| HTML | Frontend structure |
+| CSS | Frontend styling |
 | JavaScript | Frontend interactions |
+| Git | Version control |
+| GitHub | Project hosting |
 
----
-
-## 📂 Project Structure
+## 📁 Project Structure
 
 ```text
-fake-python-jobs-scraper/
+python-job-scraper/
 │
-├── .gitignore
-├── README.md
-├── requirements.txt
 ├── scraper.py
 ├── validate.py
+├── requirements.txt
+├── README.md
+├── .gitignore
 │
 ├── data/
-│   ├── README.md
 │   ├── jobs.csv
-│   └── analysis_summary.csv
+│   ├── analysis_summary.csv
+│   └── README.md
+│
+├── screenshots/
+│   ├── home.png
+│   ├── job-detail.png
+│   └── analytics.png
 │
 ├── notebooks/
 │   └── README.md
 │
-├── screenshots/
-│   ├── analytics.png
-│   ├── home.png
-│   └── job-detail.png
-│
 └── website/
     ├── app.py
+    ├── config.py
     │
-    ├── templates/
-    │   ├── base.html
-    │   ├── index.html
-    │   ├── analytics.html
-    │   └── job_detail.html
+    ├── backend/
+    │   ├── __init__.py
+    │   ├── routes.py
+    │   │
+    │   └── services/
+    │       ├── __init__.py
+    │       ├── job_service.py
+    │       └── analytics_service.py
+    │
+    ├── frontend/
+    │   └── templates/
+    │       ├── base.html
+    │       ├── index.html
+    │       ├── analytics.html
+    │       ├── job_detail.html
+    │       │
+    │       └── components/
+    │           ├── navbar.html
+    │           ├── footer.html
+    │           ├── job_card.html
+    │           ├── search_bar.html
+    │           ├── stats_cards.html
+    │           └── filters.html
     │
     └── static/
-        ├── assets/
         ├── css/
         │   └── style.css
-        └── js/
-            └── script.js
-```
-
+        ├── js/
+        │   └── script.js
+        └── assets/
+            ├── images/
+            └── icons/
 ---
 
 ## 📊 Dataset
@@ -404,6 +409,6 @@ This project uses the Fake Python Jobs website provided by Real Python for educa
 
 ## 👨‍💻 Author
 
-**Mandeep Samrat**
+**Mandeep Kumar**
 
 Built as a Python web scraping, data analysis, and Flask dashboard project.
