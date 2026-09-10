@@ -269,13 +269,13 @@ The analytics page presents the collected job data in a visual format.
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/fake-python-jobs-scraper.git
+git clone https://github.com/YOUR_USERNAME/python-jobs-scraper.git
 ```
 
 ### 2. Open the project
 
 ```bash
-cd fake-python-jobs-scraper
+cd python-jobs-scraper
 ```
 
 ### 3. Install dependencies
@@ -343,7 +343,7 @@ http://127.0.0.1:5000
 ## 🔄 Project Workflow
 
 ```text
-Fake Python Jobs Website
+    Python Jobs Website
           ↓
       scraper.py
           ↓
@@ -403,7 +403,7 @@ Possible improvements include:
 
 ## 📚 Data Source
 
-This project uses the Fake Python Jobs website provided by Real Python for educational and scraping practice purposes.
+This project uses the Python Jobs website provided by Real Python for educational and scraping practice purposes.
 
 ---
 
