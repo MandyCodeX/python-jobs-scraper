@@ -269,7 +269,7 @@ The analytics page presents the collected job data in a visual format.
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/python-jobs-scraper.git
+git clone https://github.com/MandyCodeX/python-jobs-scraper.git
 ```
 
 ### 2. Open the project
