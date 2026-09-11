@@ -135,6 +135,7 @@ python-job-scraper/
             ├── images/
             └── icons/
 ---
+```
 
 ## 📊 Dataset
 
