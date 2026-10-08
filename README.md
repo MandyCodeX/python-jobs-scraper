@@ -391,7 +391,7 @@ This project uses the Python Jobs website provided by Real Python for educationa
 
 ---
 
-#Project **URL**
-```
+# Project **URL**
+
 https://roadmap.sh/projects/job-listings-scraper
 
