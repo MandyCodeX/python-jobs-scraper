@@ -385,31 +385,8 @@ This project demonstrates practical experience with:
 
 ---
 
-## 🔮 Future Improvements
-
-Possible improvements include:
-
-- Add pagination
-- Add advanced job filters
-- Add technology-based filtering
-- Add salary analysis
-- Add interactive charts
-- Add database storage
-- Add automated scraping
-- Deploy the Flask application
-- Add automated tests
-- Add CI/CD using GitHub Actions
-
----
-
 ## 📚 Data Source
 
 This project uses the Python Jobs website provided by Real Python for educational and scraping practice purposes.
 
 ---
-
-## 👨‍💻 Author
-
-**Mandeep Kumar**
-
-Built as a Python web scraping, data analysis, and Flask dashboard project.
